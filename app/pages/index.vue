@@ -2,7 +2,7 @@
 // useFetch vs $fetch vs useAsyncData
 
 function handleClick() {
-  $fetch("https://dummyapi.online/api/pokemon");
+  $fetch("/api/hello");
 }
 
 const { data: pokemons } = await useFetch(
