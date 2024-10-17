@@ -1,21 +1,21 @@
 <script setup lang="ts">
-const { data, execute, error } = await useFetch(
-  '/api/error',
-  {
-    lazy: true,
-  }
-);
+console.time()
 
-watchEffect(()=>{
-  if(error.value){
-    throw createError({...error.value,fatal: true})
-  }
+const { data } = await useAsyncData(()=>{
+  return Promise.all([
+    $fetch('/api/sleep/2000'),
+    $fetch('/api/sleep/3000')
+  ])
 })
 
+const author = computed(()=> data.value?.[0])
+const comments = computed(()=> data.value?.[1])
+
+console.timeEnd()
 
 </script>
 <template>
   <h1 class="text-3xl my-8">Users</h1>
-  <pre>{{ data }}</pre>
-  <UButton @click="execute">Refresh Data</UButton>
+  <pre>{{ author }}</pre>
+  <pre>{{ comments }}</pre>
 </template>
