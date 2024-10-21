@@ -1,6 +1,14 @@
-# Nuxt 3 Minimal Starter
+# The Complete Guide to Data Fetching in Nuxt 
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[![Course cover image](https://vueschool.io/storage/media/5d574e53252a1a02021bedbf83dc6204/The-Complete-Guide-to-Data-Fetching-in-Nuxt-02.jpeg)](https://vueschool.io/courses/the-complete-guide-to-data-fetching-in-nuxt)
+
+This repository contains the source code for [The Complete Guide to Data Fetching in Nuxt
+](https://vueschool.io/courses/the-complete-guide-to-data-fetching-in-nuxt) course.
+
+There are a surprising amount of options when it comes to fetching data in a Nuxt app. You can do so by blocking page nav or lazily after navigation change. You can also fetch data on the client only, on the server only, or on both. There are also various concepts to learn when it comes to caching that data for performance and different ways and reasons to fetch fresh data. In this course, we'll do a deep dive into useFetch and useAsyncData to make you a data fetching expert!
+
+**Intrigued?**
+[Enroll now](https://vueschool.io/courses/the-complete-guide-to-data-fetching-in-nuxt)
 
 ## Setup
 
