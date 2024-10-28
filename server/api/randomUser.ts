@@ -5,6 +5,5 @@ export default defineEventHandler(async (event) => {
     return {
         firstName: faker.person.firstName(),
         lastName: faker.person.lastName(),
-        randomNum: query.randomNum
     };
 });
