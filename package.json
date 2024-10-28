@@ -15,5 +15,8 @@
     "octokit": "^4.0.2",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.1.0"
   }
 }
