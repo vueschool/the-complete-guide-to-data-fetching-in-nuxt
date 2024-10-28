@@ -1,17 +1,21 @@
 <script setup lang="ts">
-const { data } = await useFetch('/api/randomUser', {
+const { data } = await useFetch<{
+  users: {
+    lastName: string;
+    firstName: string;
+  }[]
+}>('https://dummyjson.com/users/', {
   transform(data) {
     return {
-      ...data,
-      expiresAt: Date.now() + 10_000
+      users: data.users.map((user) => {
+        return {
+          firstName: user.firstName,
+          lastName: user.lastName
+        }
+      })
     }
-  },
-  getCachedData(key, nuxtApp) {
-    const data = nuxtApp.payload.data[key] || nuxtApp.static.data[key]
-    if (Date.now() >= data?.expiresAt) return undefined;
-    return data;
-  },
-  lazy: true,
+
+  }
 });
 </script>
 <template>
