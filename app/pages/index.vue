@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { parse } from "devalue"
+
+useAPI('/api/')
+
 const { data } = await useFetch('/api/currentDate', {
+  headers: {
+    'Content-Type': "application/devalue"
+  },
   transform(data) {
     const t = parse(data as unknown as string) as typeof data;
     return t;
